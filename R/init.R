@@ -1,16 +1,16 @@
 #' Unit Hydrograph initializing
 #'
-#' The funtion initialize the main features of the Unit Hydrograph:
+#' The funtion initialize the main Unit Hydrographs:
 #' - The UH of the river,
 #' - the UH of the layers
 #' - The UH of the Mean Annual Discharge (MAD)
 #' @param Timeresinsec time resolution of the process in second (1hour: 3600s, ... etc)
 #' @param modelLayer list of parameters about the Layers
-#'  list(maxL=a,speed=b,nbStepsDelay=c,z=d,distr="dexp",param=c(e), NoL=f)
+#'  list(maxL,speed,nbStepsDelay,z,distr,param, NoL)
 #' @param modelRiver list of parameters about the river
-#'  list(maxL=a,speed=b,nbStepsDelay=c ,z=d,distr="dnorm",param=c(e,f))
+#'  list(maxL,speed,nbStepsDelay,z,distr,param)
 #' @param modelMAD list of parameters about the Mean Annual Discharge
-#'  list(maxL=a,speed=b,nbStepsDelay=c,z=d,distr="dexp",param=c(e))
+#'  list(maxL,speed,nbStepsDelay,z,distr,param)
 #' @keywords UH
 #' @export
 #' @examples
