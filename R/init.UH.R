@@ -29,8 +29,19 @@ init.UH <-function(method=NULL,path=NULL,Timeresinsec,modelLayer,modelRiver,mode
     "source"       = init.source(path=path),
     (message=paste0("Invalid method:", method,".")))
 
-  return(snow)
+  return(UH)
 }
+
+init.load <- function(path){
+  load(paste0(path,"UH.rda"))
+  return(UH)
+}
+
+init.source <- function(path){
+  source(paste0(path,"UH.R"),local=TRUE)
+  return(UH)
+}
+
 
 init.processed <- function(Timeresinsec,modelLayer,modelRiver,modelMAD) {
    if( (!is.null(Timeresinsec)) && (!is.null(modelLayer)) &&
