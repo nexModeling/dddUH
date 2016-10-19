@@ -1,6 +1,8 @@
 # dddUH
 
-This R-package focuses on process the Unit Hydrograph for the river, slopes, layer and other vectors in the hydrological model [ddd]{https://nexmodeling.github.io/ddd/}.
+[![Travis-CI Build Status](https://travis-ci.org/nexModeling/dddUH.svg?branch=master)](https://travis-ci.org/nexModeling/dddUH)
+
+This R-package focuses on process the Unit Hydrograph for the river, slopes, layer and other vectors in the hydrological model [ddd](https://nexmodeling.github.io/ddd/).
 
 ## Installation
 
@@ -11,4 +13,4 @@ devtools::install_github("nexModeling/dddUH")
 
 ## Usage
 
-More how-to's will be release soon on the [ddd webpage]{https://nexmodeling.github.io/dddUH/}
+More how-to's will be release soon on the [ddd webpage](https://nexmodeling.github.io/dddUH/)
