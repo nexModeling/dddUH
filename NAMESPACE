@@ -2,6 +2,6 @@
 
 export(UHslopes)
 export(UHvec)
-export(init)
+export(init.UH)
 export(layerUH)
 export(xConvRiver)
