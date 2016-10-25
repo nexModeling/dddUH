@@ -85,7 +85,7 @@ init.processed <- function(Timeresinsec,modelLayer,modelRiver,modelMAD,SAVE,path
        dir.create(pathInit, showWarnings = FALSE)
        do.call("save", list(obj="UH", file=paste0(pathInit,"UH.rda")))
      }
-     return(res)
+     return(UH)
 
    } else stop("NULL arguments in init.processed UH")
 
