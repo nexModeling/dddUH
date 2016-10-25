@@ -5,12 +5,12 @@
 \title{Unit Hydrograph initializing}
 \usage{
 init.UH(method = NULL, path = NULL, Timeresinsec, modelLayer, modelRiver,
-  modelMAD)
+  modelMAD, SAVE = FALSE, pathResults = "~/")
 }
 \arguments{
-\item{method}{method for the initialization, "load", "source", "processed"}
+\item{method}{method for the initialization, "load", "processed"}
 
-\item{path}{directory where to get the files, in used when method is "load" or "source"}
+\item{path}{directory where to get the files, in used when method is "load"}
 
 \item{Timeresinsec}{time resolution of the process in second (1hour: 3600s, ... etc)}
 
@@ -22,6 +22,10 @@ list(maxL,speed,nbStepsDelay,z,distr,param)}
 
 \item{modelMAD}{list of parameters about the Mean Annual Discharge
 list(maxL,speed,nbStepsDelay,z,distr,param)}
+
+\item{SAVE}{Save the results, Boolean}
+
+\item{pathResults}{Path of the results. By default: $HOME}
 }
 \description{
 The funtion initialize the main Unit Hydrographs:
