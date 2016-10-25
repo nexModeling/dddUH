@@ -73,7 +73,7 @@ init.processed <- function(Timeresinsec,modelLayer,modelRiver,modelMAD,SAVE,path
      res_UHMAD <- UHvec(maxL=modelMAD$maxL,speed=modelMAD$speed,Timeresinsec=Timeresinsec,model=model)
 
 
-     res <- list( UHriver = res_UHriver,
+     UH <- list( UHriver = res_UHriver,
                   layerUH = res_layerUH,
                   UHMAD   = res_UHMAD
                   )
