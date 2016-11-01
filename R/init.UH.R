@@ -32,7 +32,7 @@ init.UH <-function(method=NULL,path=NULL,Timeresinsec,modelLayer,modelRiver,mode
 }
 
 
-init.load <- function(path,SAVE,pathResults){
+init.load <- function(path){
   load(paste0(path,"UH.rda"))
   return(UH)
 }
