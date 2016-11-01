@@ -13,8 +13,6 @@
 #'  list(maxL,speed,nbStepsDelay,z,distr,param)
 #' @param modelMAD list of parameters about the Mean Annual Discharge
 #'  list(maxL,speed,nbStepsDelay,z,distr,param)
-#' @param SAVE Save the results, Boolean
-#' @param pathResults Path of the results. By default: $HOME
 #' @keywords UH
 #' @export
 #' @examples
@@ -22,30 +20,25 @@
 #' init.UH()
 #' }
 
-init.UH <-function(method=NULL,path=NULL,Timeresinsec,modelLayer,modelRiver,modelMAD,SAVE=FALSE,pathResults="~/"){
+init.UH <-function(method=NULL,path=NULL,Timeresinsec,modelLayer,modelRiver,modelMAD){
 
 
   UH <- switch(method,
-    "processed"    = init.processed(Timeresinsec=Timeresinsec,modelLayer=modelLayer,modelRiver=modelRiver,modelMAD=modelMAD,SAVE=SAVE,pathResults=pathResults),
-    "load"         = init.load(path=path,SAVE=SAVE,pathResults=pathResults),
+    "processed"    = init.processed(Timeresinsec=Timeresinsec,modelLayer=modelLayer,modelRiver=modelRiver,modelMAD=modelMAD),
+    "load"         = init.load(path=path),
     (message=paste0("Invalid method:", method,".")))
 
   return(UH)
 }
 
 
-init.load <- function(path,SAVE,pathResults){
+init.load <- function(path){
   load(paste0(path,"UH.rda"))
-  if (SAVE){
-    pathInit <- paste0(pathResults,"init/")
-    dir.create(pathInit, showWarnings = FALSE)
-    do.call("save", list(obj="UH", file=paste0(pathInit,"UH.rda")))
-  }
   return(UH)
 }
 
 
-init.processed <- function(Timeresinsec,modelLayer,modelRiver,modelMAD,SAVE,pathResults){
+init.processed <- function(Timeresinsec,modelLayer,modelRiver,modelMAD){
    if( (!is.null(Timeresinsec)) && (!is.null(modelLayer)) &&
        (!is.null(modelRiver)) && (!is.null(modelMAD)) ) {
 
@@ -80,11 +73,6 @@ init.processed <- function(Timeresinsec,modelLayer,modelRiver,modelMAD,SAVE,path
 
      rm(res_UHriver,res_layerUH,res_UHMAD)
 
-     if (SAVE){
-       pathInit <- paste0(pathResults,"init/")
-       dir.create(pathInit, showWarnings = FALSE)
-       do.call("save", list(obj="UH", file=paste0(pathInit,"UH.rda")))
-     }
      return(UH)
 
    } else stop("NULL arguments in init.processed UH")
