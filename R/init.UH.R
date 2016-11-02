@@ -54,7 +54,7 @@ init.processed <- function(Timeresinsec,modelLayer,modelRiver,modelMAD){
      ###########
      model <- list(z=modelRiver$z,distr=modelRiver$distr,param=modelRiver$param)
      if(modelRiver$nbStepsDelay==1) {
-       UHriver <- 1
+       res_UHriver <- 1
      } else {
        res_UHriver <- UHvec(maxL=modelRiver$maxL,speed=modelRiver$speed,Timeresinsec=Timeresinsec,model=model)
      }
