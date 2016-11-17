@@ -33,7 +33,10 @@ init.UH <-function(method=NULL,path=NULL,Timeresinsec,modelLayer,modelRiver,mode
 
 
 init.load <- function(path){
-  load(paste0(path,"UH.rda"))
+  env <- environment()
+  path <- normalizePath(file.path(path,"UH.rda"),mustWork = FALSE)
+  load(path, envir=env)
+  UH <- get("UH",envir = env)
   return(UH)
 }
 
